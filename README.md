@@ -1,4 +1,4 @@
-# IBM Code Model Asset Exchange: Breast Cancer Mitoses Detector
+# IBM Code Model Asset Exchange: Breast Cancer Mitosis Detector
 
 The [Tumor Proliferation Assessment Challenge 2016 (TUPAC16)](http://tupac.tue-image.nl/) was created to develop state-of-the-art algorithms for automatic prediction of tumor proliferation scores from whole-slide histopathology images of breast tumors. The [IBM CODAIT](http://codait.org) team trained a mitosis detection model (a modified ResNet-50 model) on the [TUPAC16 auxiliary mitosis dataset](http://tupac.tue-image.nl/node/3), and then applied it to the whole slide images for predicting the tumor proliferation scores.
 
@@ -40,22 +40,22 @@ _Note:_ Although this model supports different input data formats, the inference
 
 ## 1. Build the Model
 
-Clone the `MAX-Breast-Cancer-Mitoses-Detector` repository locally. In a terminal, run the following command:
+Clone the `MAX-Breast-Cancer-Mitosis-Detector` repository locally. In a terminal, run the following command:
 
 ```
-$ git clone https://github.com/IBM/MAX-Breast-Cancer-Mitoses-Detector.git
+$ git clone https://github.com/IBM/MAX-Breast-Cancer-Mitosis-Detector.git
 ```
 
 Change directory into the repository base folder:
 
 ```
-$ cd MAX-Breast-Cancer-Mitoses-Detector
+$ cd MAX-Breast-Cancer-Mitosis-Detector
 ```
 
 To build the docker image locally, run: 
 
 ```
-$ docker build -t max-breast-cancer-mitoses-detector .
+$ docker build -t max-breast-cancer-mitosis-detector .
 ```
 
 All required model assets will be downloaded during the build process. _Note_ that currently this docker image is CPU
@@ -66,7 +66,7 @@ only (we will add support for GPU images later).
 To run the docker image, which automatically starts the model serving API, run:
 
 ```
-$ docker run -it -p 5000:5000 max-breast-cancer-mitoses-detector
+$ docker run -it -p 5000:5000 max-breast-cancer-mitosis-detector
 ```
 
 ## 3. Use the Model
