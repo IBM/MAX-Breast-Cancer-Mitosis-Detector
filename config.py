@@ -21,7 +21,7 @@ MODEL_LICENSE = "Custom"  # TODO - what are we going to release this as?
 MODEL_META_DATA = {
     'id': '{}'.format(MODEL_NAME.lower()),
     'name': '{} Keras Model'.format(MODEL_NAME),
-    'description': '{} Keras model trained on TUPAC16 data to detect mitoses'.format(MODEL_NAME),
+    'description': '{} Keras model trained on TUPAC16 data to detect mitosis'.format(MODEL_NAME),
     'type': 'image_classification',
     'license': '{}'.format(MODEL_LICENSE)
 }
