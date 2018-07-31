@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: max-breast-cancer-mitosis-detector
+spec:
+  selector:
+    app: max-breast-cancer-mitosis-detector
+  ports:
+  - port: 5000
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: max-breast-cancer-mitosis-detector
+  labels:
+    app: max-breast-cancer-mitosis-detector
+spec:
+  selector:
+    matchLabels:
+      app: max-breast-cancer-mitosis-detector
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: max-breast-cancer-mitosis-detector
+    spec:
+      containers:
+      - name: max-breast-cancer-mitosis-detector
+        image: codait/max-breast-cancer-mitosis-detector:latest
+        ports:
+        - containerPort: 5000
