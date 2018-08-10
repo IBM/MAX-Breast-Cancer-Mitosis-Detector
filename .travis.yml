@@ -4,8 +4,8 @@ python:
 services:
   - docker
 install:
-  - docker build -t max-image-segmenter .
-  - docker run -it -d -p 5000:5000 max-image-segmenter
+  - docker build -t max-breast-cancer-mitosis-detector .
+  - docker run -it -d -p 5000:5000 max-breast-cancer-mitosis-detector
 before_script:
   - pip install pytest pycurl
 script:
