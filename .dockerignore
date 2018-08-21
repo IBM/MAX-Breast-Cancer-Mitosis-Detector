@@ -1,2 +1,5 @@
 README.md
 Dockerfile
+.git/
+tests/
+/.pytest_cache/
