@@ -2,15 +2,8 @@ FROM codait/max-base
 
 RUN apt-get update && apt-get install -y libopenslide0 gcc && rm -rf /var/lib/apt/lists/*
 
-# Python package versions
-ARG numpy_version=1.14.1
-ARG tensorflow_version=1.9.0
-
-RUN pip install numpy==${numpy_version} && \
-    pip install Pillow && \
-    pip install h5py && \
-    pip install openslide-python && \
-    pip install tensorflow==${tensorflow_version}
+COPY requirements.txt /workspace
+RUN pip install -r requirements.txt
 
 RUN cd /workspace && \
     git clone https://github.com/codait/deep-histopath && \
