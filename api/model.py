@@ -23,9 +23,8 @@ class Model(Resource):
 
 
 label_prediction = api.model('LabelPrediction', {
-    'probability': fields.Float(required=True)
+    'probability': fields.Float(required=True, description='Probability of the image containing mitosis')
 })
-
 
 predict_response = api.model('ModelPredictResponse', {
     'status': fields.String(required=True, description='Response status message'),
@@ -34,12 +33,12 @@ predict_response = api.model('ModelPredictResponse', {
 
 # set up parser for image input data
 image_parser = api.parser()
-image_parser.add_argument('image', type=FileStorage, location='files', required=True)
+image_parser.add_argument('image', type=FileStorage, location='files', required=True,
+                          help='An image file encoded as PNG with the size 64*64')
 
 
 @api.route('/predict')
 class Predict(Resource):
-
     model_wrapper = ModelWrapper()
 
     @api.doc('predict')
@@ -59,5 +58,5 @@ class Predict(Resource):
             result['status'] = 'ok'
         except ValueError as e:
             abort(400, str(e))
-            
+
         return result
