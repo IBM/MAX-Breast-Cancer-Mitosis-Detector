@@ -16,6 +16,8 @@ _Note:_ Although this model supports different input data formats, the inference
 
 ## References
 * _Dusenberry, Mike, and Hu, Fei_, [Deep Learning for Breast Cancer Mitosis Detection](https://github.com/CODAIT/deep-histopath/raw/master/docs/tupac16-paper/paper.pdf), 2018.
+* [Transfer Learning in CNNs for Mitosis Detection](https://www.youtube.com/watch?v=E2Ne1JYLyp4), OpenTech AI Conference at IBM Finland, 2018
+* [Deep Learning for Breast Cancer Mitosis Detection](https://www.youtube.com/watch?v=vov4xyhs3jY&feature=youtu.be&t=1h4m57s), SF Big Analytics Meetup, 2018
 
 ## Licenses
 
