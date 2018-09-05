@@ -128,3 +128,8 @@ then need to rebuild the docker image (see [step 1](#1-build-the-model)).
 ### 5. Cleanup
 
 To stop the docker container type `CTRL` + `C` in your terminal.
+
+## Links
+
+* [Transfer Learning in CNNs for Mitosis Detection](https://www.youtube.com/watch?v=E2Ne1JYLyp4): Interview on Transfer Learning in CNNs for Mitosis Detection at the OpenTech AI conference at IBM Finland, 2018
+* [Deep Learning for Breast Cancer Mitosis Detection](https://www.youtube.com/watch?v=vov4xyhs3jY&feature=youtu.be&t=1h4m57s): Presentation on SF Big Analytics Meetup, 2018
