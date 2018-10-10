@@ -1,41 +1,59 @@
 import pytest
-import pycurl
-import io
-import json
+import requests
 
 
-def test_response():
+def test_swagger():
+
+    model_endpoint = 'http://localhost:5000/swagger.json'
+
+    r = requests.get(url=model_endpoint)
+    assert r.status_code == 200
+    assert r.headers['Content-Type'] == 'application/json'
+
+    json = r.json()
+    assert 'swagger' in json
+    assert json.get('info') and json.get('info').get('title') == 'Model Asset Exchange Server'
+
+
+def test_metadata():
+
+    model_endpoint = 'http://localhost:5000/model/metadata'
+
+    r = requests.get(url=model_endpoint)
+    assert r.status_code == 200
+
+    metadata = r.json()
+    assert metadata['id'] == 'deep_histopath_model'
+    assert metadata['name'] == 'deep_histopath_model Keras Model'
+    assert metadata['description'] == 'deep_histopath_model Keras model trained on TUPAC16 data to detect mitosis'
+    assert metadata['license'] == 'Custom'
+
+
+def test_predict():
+    model_endpoint = 'http://localhost:5000/model/predict'
+    true_path = 'assets/true.png'
+    false_path = 'assets/false.png'
 
     # Test True
 
-    c = pycurl.Curl()
-    b = io.BytesIO()
-    c.setopt(pycurl.URL, 'http://localhost:5000/model/predict')
-    c.setopt(pycurl.HTTPHEADER, ['Accept:application/json', 'Content-Type: multipart/form-data'])
-    c.setopt(pycurl.HTTPPOST, [('image', (pycurl.FORM_FILE, "assets/true.png"))])
-    c.setopt(pycurl.WRITEFUNCTION, b.write)
-    c.perform()
-    assert c.getinfo(pycurl.RESPONSE_CODE) == 200
-    c.close()
-    response = b.getvalue()
-    response = json.loads(response)
+    with open(true_path, 'rb') as file:
+        file_form = {'image': (true_path, file, 'image/png')}
+        r = requests.post(url=model_endpoint, files=file_form)
+    assert r.status_code == 200
+
+    response = r.json()
 
     assert response['status'] == 'ok'
     assert response['predictions'][0]['probability'] > 0.5
 
     # Test False
 
-    c = pycurl.Curl()
-    b = io.BytesIO()
-    c.setopt(pycurl.URL, 'http://localhost:5000/model/predict')
-    c.setopt(pycurl.HTTPHEADER, ['Accept:application/json', 'Content-Type: multipart/form-data'])
-    c.setopt(pycurl.HTTPPOST, [('image', (pycurl.FORM_FILE, "assets/false.png"))])
-    c.setopt(pycurl.WRITEFUNCTION, b.write)
-    c.perform()
-    assert c.getinfo(pycurl.RESPONSE_CODE) == 200
-    c.close()
-    response = b.getvalue()
-    response = json.loads(response)
+    with open(false_path, 'rb') as file:
+        file_form = {'image': (false_path, file, 'image/png')}
+        r = requests.post(url=model_endpoint, files=file_form)
+    assert r.status_code == 200
+
+    response = r.json()
 
     assert response['status'] == 'ok'
     assert response['predictions'][0]['probability'] < 0.5
