@@ -1,4 +1,4 @@
-FROM codait/max-base
+FROM codait/max-base:v1.0.0
 
 RUN apt-get update && apt-get install -y libopenslide0 gcc && rm -rf /var/lib/apt/lists/*
 
