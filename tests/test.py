@@ -12,7 +12,7 @@ def test_swagger():
 
     json = r.json()
     assert 'swagger' in json
-    assert json.get('info') and json.get('info').get('title') == 'Model Asset Exchange Server'
+    assert json.get('info') and json.get('info').get('title') == 'MAX Breast Cancer Mitosis Detector'
 
 
 def test_metadata():
@@ -23,9 +23,9 @@ def test_metadata():
     assert r.status_code == 200
 
     metadata = r.json()
-    assert metadata['id'] == 'deep_histopath_model'
-    assert metadata['name'] == 'deep_histopath_model Keras Model'
-    assert metadata['description'] == 'deep_histopath_model Keras model trained on TUPAC16 data to detect mitosis'
+    assert metadata['id'] == 'max breast cancer mitosis detector-keras-model'
+    assert metadata['name'] == 'MAX Breast Cancer Mitosis Detector Keras Model'
+    assert metadata['description'] == 'MAX Breast Cancer Mitosis Detector Keras model trained on TUPAC16 data to detect mitosis'
     assert metadata['license'] == 'Custom'
 
 
