@@ -8,13 +8,13 @@ RESTPLUS_MASK_SWAGGER = False
 SWAGGER_UI_DOC_EXPANSION = 'none'
 
 # API metadata
-API_TITLE = 'Model Asset Exchange Server'
-API_DESC = 'An API for serving models'
+API_TITLE = 'MAX Breast Cancer Mitosis Detector'
+API_DESC = 'Predict the probability of the input image containing mitosis.'
 API_VERSION = '0.1'
 
 # default model
-MODEL_NAME = 'deep_histopath_model'
-DEFAULT_MODEL_PATH = '/workspace/assets/{}.hdf5'.format(MODEL_NAME)
+MODEL_NAME = 'MAX Breast Cancer Mitosis Detector'
+DEFAULT_MODEL_PATH = 'assets/deep_histopath_model.hdf5'
 
 MODEL_LICENSE = "Custom"  # TODO - what are we going to release this as?
 
