@@ -11,6 +11,7 @@ from train_mitoses import normalize
 
 logger = logging.getLogger()
 
+
 class ModelWrapper(MAXModelWrapper):
 
     MODEL_META_DATA = {

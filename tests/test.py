@@ -25,7 +25,8 @@ def test_metadata():
     metadata = r.json()
     assert metadata['id'] == 'max breast cancer mitosis detector-keras-model'
     assert metadata['name'] == 'MAX Breast Cancer Mitosis Detector Keras Model'
-    assert metadata['description'] == 'MAX Breast Cancer Mitosis Detector Keras model trained on TUPAC16 data to detect mitosis'
+    assert metadata['description'] == 'MAX Breast Cancer Mitosis Detector Keras model trained on TUPAC16 data to ' \
+                                      'detect mitosis'
     assert metadata['license'] == 'Custom'
 
 
