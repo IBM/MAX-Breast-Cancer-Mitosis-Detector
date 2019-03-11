@@ -9,6 +9,6 @@ install:
   - pip install pytest requests flake8
 before_script:
   - flake8 . --max-line-length=127
-  - sleep 10
+  - sleep 30
 script:
   - pytest tests/test.py
