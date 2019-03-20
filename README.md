@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/IBM/MAX-Breast-Cancer-Mitosis-Detector.svg?branch=master)](https://travis-ci.org/IBM/MAX-Breast-Cancer-Mitosis-Detector) [![Website Status](https://img.shields.io/website/http/max-breast-cancer-mitosis-detector.max.us-south.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-breast-cancer-mitosis-detector.max.us-south.containers.appdomain.cloud/)
+
 # IBM Code Model Asset Exchange: Breast Cancer Mitosis Detector
 
 The [Tumor Proliferation Assessment Challenge 2016 (TUPAC16)](http://tupac.tue-image.nl/) was created to develop state-of-the-art algorithms for automatic prediction of tumor proliferation scores from whole-slide histopathology images of breast tumors. The [IBM CODAIT](http://codait.org) team trained a mitosis detection model (a modified ResNet-50 model) on the [TUPAC16 auxiliary mitosis dataset](http://tupac.tue-image.nl/node/3), and then applied it to the whole slide images for predicting the tumor proliferation scores.
