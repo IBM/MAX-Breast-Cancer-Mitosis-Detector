@@ -16,7 +16,6 @@ RUN pip install -r requirements.txt
 RUN cd /workspace && \
     git clone https://github.com/codait/deep-histopath && \
     cd deep-histopath && \
-    git checkout e0c93c3543830a0ee07ad9408e844465f045781c && \
     cd ../ && \
     cp -R deep-histopath/. .
 
