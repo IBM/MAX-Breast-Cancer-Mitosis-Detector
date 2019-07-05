@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/IBM/MAX-Breast-Cancer-Mitosis-Detector.svg?branch=master)](https://travis-ci.org/IBM/MAX-Breast-Cancer-Mitosis-Detector) [![Website Status](https://img.shields.io/website/http/max-breast-cancer-mitosis-detector.max.us-south.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-breast-cancer-mitosis-detector.max.us-south.containers.appdomain.cloud/)
 
+[<img src="docs/deploy-max-to-ibm-cloud-with-kubernetes-button.png" width="400px">](http://ibm.biz/max-to-ibm-cloud-tutorial)
+
 # IBM Code Model Asset Exchange: Breast Cancer Mitosis Detector
 
 The [Tumor Proliferation Assessment Challenge 2016 (TUPAC16)](http://tupac.tue-image.nl/) was created to develop state-of-the-art algorithms for automatic prediction of tumor proliferation scores from whole-slide histopathology images of breast tumors. The [IBM CODAIT](http://codait.org) team trained a mitosis detection model (a modified ResNet-50 model) on the [TUPAC16 auxiliary mitosis dataset](http://tupac.tue-image.nl/node/3), and then applied it to the whole slide images for predicting the tumor proliferation scores.
@@ -25,6 +27,7 @@ _Note:_ Although this model supports different input data formats, the inference
 | ------------- | --------  | -------- |
 | This repository | [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0) | [LICENSE](LICENSE) |
 | Training Data | Custom License | [TUPAC16](http://tupac.tue-image.nl/node/5) |
+| Test Samples | Custom License | [Sample README](samples/README.md) |
 
 ## Pre-requisites:
 
@@ -105,7 +108,7 @@ $ docker run -it -p 5000:5000 max-breast-cancer-mitosis-detector
 The API server automatically generates an interactive Swagger documentation page. Go to `http://localhost:5000` to load
 it. From there you can explore the API and also create test requests.
 
-Use the `model/predict` endpoint to load a test image (you can use one of the test images from the `assets` folder) and
+Use the `model/predict` endpoint to load a test image (you can use one of the test images from the `samples` folder) and
 get predicted labels for the image from the API.
 
 ![Swagger Doc Screenshot](docs/swagger-screenshot.png)
@@ -113,7 +116,7 @@ get predicted labels for the image from the API.
 You can also test it on the command line, for example:
 
 ```bash
-$ curl -F "image=@assets/true.png" -XPOST http://localhost:5000/model/predict
+$ curl -F "image=@samples/true.png" -XPOST http://localhost:5000/model/predict
 ```
 
 You should see a JSON response like that below:
