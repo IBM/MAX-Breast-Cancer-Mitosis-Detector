@@ -1,10 +1,4 @@
-# Asset Details
-
-## Model files
-
-Model files are released under an [Apache 2 License](https://www.apache.org/licenses/LICENSE-2.0).
-
-* deep_histopath_model.hdf5
+# Sample Details
 
 ## Images
 

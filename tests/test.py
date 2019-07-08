@@ -48,8 +48,8 @@ def test_metadata():
 
 def test_predict():
     model_endpoint = 'http://localhost:5000/model/predict'
-    true_path = 'assets/true.png'
-    false_path = 'assets/false.png'
+    true_path = 'samples/true.png'
+    false_path = 'samples/false.png'
 
     # Test True
 
