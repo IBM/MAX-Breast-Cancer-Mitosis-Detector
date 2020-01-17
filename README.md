@@ -143,3 +143,7 @@ To stop the docker container type `CTRL` + `C` in your terminal.
 
 * [Transfer Learning in CNNs for Mitosis Detection](https://www.youtube.com/watch?v=E2Ne1JYLyp4): Interview on Transfer Learning in CNNs for Mitosis Detection at the OpenTech AI conference at IBM Finland, 2018
 * [Deep Learning for Breast Cancer Mitosis Detection](https://www.youtube.com/watch?v=vov4xyhs3jY&feature=youtu.be&t=1h4m57s): Presentation on SF Big Analytics Meetup, 2018
+
+## Resources and Contributions
+   
+If you are interested in contributing to the Model Asset Exchange project or have any queries, please follow the instructions [here](https://github.com/CODAIT/max-central-repo).
