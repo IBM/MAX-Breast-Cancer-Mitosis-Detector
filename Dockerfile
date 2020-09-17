@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-FROM codait/max-base:v1.3.2
+FROM quay.io/codait/max-base:v1.3.2
 
 ARG model_bucket=https://max-cdn.cdn.appdomain.cloud/max-breast-cancer-mitosis-detector/1.0.1
 ARG model_file=assets.tar.gz
