@@ -27,6 +27,6 @@ spec:
     spec:
       containers:
       - name: max-breast-cancer-mitosis-detector
-        image: codait/max-breast-cancer-mitosis-detector:latest
+        image: quay.io/codait/max-breast-cancer-mitosis-detector:latest
         ports:
         - containerPort: 5000
