@@ -30,8 +30,8 @@ RUN pip install -r requirements.txt
 RUN git clone https://github.com/codait/deep-histopath && \
     cd deep-histopath && \
     git checkout c8baf8d47b6c08c0f6c7b1fb6d5dd6b77e711c33 && \
-    cd ../ && \
-    cp -R deep-histopath/. .
+    cd && \
+    mv -n deep-histopath/* .
 
 COPY . .
 
@@ -40,4 +40,4 @@ RUN sha512sum -c sha512sums.txt
 
 EXPOSE 5000
 
-CMD python /workspace/app.py
+CMD python app.py
