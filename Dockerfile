@@ -28,7 +28,7 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 RUN git clone https://github.com/codait/deep-histopath && \
-    cd pushd && \
+    pushd deep-histopath && \
     git checkout c8baf8d47b6c08c0f6c7b1fb6d5dd6b77e711c33 && \
     popd && \
     mv -n deep-histopath/* .
