@@ -16,7 +16,7 @@
 
 FROM quay.io/codait/max-base:v1.4.0
 
-ARG model_bucket=https://max-cdn.cdn.appdomain.cloud/max-breast-cancer-mitosis-detector/1.0.1
+ARG model_bucket=https://codait-cos-max.s3.us.cloud-object-storage.appdomain.cloud/max-breast-cancer-mitosis-detector/1.0.1
 ARG model_file=assets.tar.gz
 
 RUN sudo apt-get update && sudo apt-get install -y libopenslide0 gcc && sudo rm -rf /var/lib/apt/lists/*
